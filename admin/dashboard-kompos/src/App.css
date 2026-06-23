@@ -1,0 +1,1194 @@
+:root{
+  --sidebar-w: 250px;
+  --bg: #f3f3f3;
+  --sidebar: #506a88;
+  --sidebar-dark: #0f2b60;
+  --card-border: #d9d9d9;
+  --shadow: 0 2px 8px rgba(0,0,0,.12);
+}
+
+*{ box-sizing: border-box; }
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  overflow: hidden;
+}
+
+html, body, #root{
+  height: 100%;
+  margin: 0;
+}
+
+/* Layout shell */
+.appShell{
+  display: flex;
+  background: white;
+  height: 100vh;      /* IMPORTANT */
+  overflow: hidden;   /* IMPORTANT */
+}
+
+.appMain{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  height: 100vh;      /* IMPORTANT */
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar{
+  width: 250px;
+  background: #506a88;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebarBrand{
+  padding: 28px 18px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: .2px;
+}
+
+.sidebarDivider{
+  width: 100%;
+  border-top: 2px solid rgba(255,255,255,0.25);
+  margin: 10px 0 16px;
+}
+
+.brandText{
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.sidebarNav{
+  padding: 14px 0;
+}
+
+.navItem{
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: white;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.navItem .navIcon{
+  width: 30px;
+  display: grid;
+  place-items: center;
+  color: white;
+  opacity: 0.95;
+}
+
+.navItem:hover{
+  background: rgba(0,0,0,.12);
+}
+
+.navItem.active{
+  background: var(--sidebar-dark);
+}
+
+.navLabel{
+  text-align: left;
+}
+
+/* Topbar */
+.topbar{
+  height: 64px;
+  background: #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  flex: 0 0 64px;
+}
+
+.topbarLeft{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* Profile dropdown */
+.topbarRight{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profileBtn{
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.profileBtn:hover{
+  background: rgba(0,0,0,.06);
+}
+
+.profileMenu{
+  position: absolute;
+  right: 0;
+  top: 52px;
+  width: 210px;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  overflow: hidden;
+  z-index: 50;
+}
+
+.profileName{
+  padding: 12px 14px;
+  font-weight: 900;
+  color: #15306f;
+  border-bottom: 1px solid #eee;
+}
+
+.logoutBtn{
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 900;
+  color: #d71919;
+  cursor: pointer;
+}
+
+.logoutBtn:hover{
+  background: #f6f6f6;
+}
+
+
+.topbarTitle{
+  margin: 0;
+  font-size: 34px;
+  color: #15306f;
+  font-weight: 900;
+}
+
+.topbarDivider{
+  width: 2px;
+  height: 32px;
+  background: #7a7a7a;
+  opacity: 0.6;
+}
+
+.topbarRole{
+  font-weight: 800;
+  color: #0f2b60;
+}
+
+/* Content */
+.appContent{
+  background: var(--bg);
+  flex: 1;
+  padding: 20px;
+  height: calc(100vh - 64px); /* 64px = tinggi topbar kamu */
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Dashboard */
+.dashboardWrap{
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.statRow{
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 10px 0 18px;
+}
+
+.statCard{
+  width: 260px;
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+  position: relative;
+}
+
+.statCard.green{ background: #18e66a; }
+.statCard.blue{ background: #1360ff; }
+
+.statCardInner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.statTitle{
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.statLeft{
+  flex: 1;
+}
+
+.statValue{
+  font-size: 30px;
+  font-weight: 900;
+  color: #111;
+}
+
+.statUnit{
+  font-size: 18px;
+  font-weight: 800;
+  color: #111;
+}
+
+.statRight{
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.statIcon{
+  color: #111;
+  opacity: 0.95;
+}
+
+.statRight.noIcon{
+  justify-content: flex-end;
+}
+
+.activeDot.only{
+  position: static;  /* supaya dia gak nempel ke posisi icon */
+  width: 22px;
+  height: 22px;
+  box-shadow: 0 0 0 4px rgba(51,240,111,.35);
+}
+
+.activeDot{
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: #33f06f;
+  box-shadow: 0 0 0 3px rgba(51,240,111,.35);
+  position: absolute;
+  right: 8px;
+}
+
+.dashGrid{
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Chart */
+.chartBlock{
+  width: 100%;
+}
+
+.chartTabs{
+  display: inline-flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #e2b97b;
+  background: #f6f6f6;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  margin-bottom: 8px;
+}
+
+.chartTab{
+  border: 0;
+  background: transparent;
+  padding: 10px 18px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #111;
+  cursor: pointer;
+}
+
+.chartTab.active{
+  color: #1f57ff;
+  background: white;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+}
+
+.chartCard{
+  background: white;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  padding: 10px 12px 14px;
+}
+
+.chartTitle{
+  text-align: center;
+  font-weight: 900;
+  margin: 6px 0 6px;
+}
+
+.chartArea{
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 10px;
+  padding: 4px 6px 0;
+  height: 260px;
+}
+
+.yAxis{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #7d7d7d;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.plot{
+  position: relative;
+  border-left: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  border-radius: 4px;
+  overflow: hidden;
+  padding: 6px 10px 10px;
+}
+
+.gridLine{
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #eaeaea;
+}
+
+.bars{
+  height: 100%;
+  display: flex;
+  align-items: stretch;            /* penting: biar child punya tinggi */
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 6px;
+}
+
+.barGroup{
+  flex: 1;                         /* penting: tiap kolom kebagi rata */
+  height: 100%;                    /* penting: supaya % bar bisa dihitung */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+
+.bar{
+  width: 36px;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #52b6ff, #1679c8);
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,.12);
+}
+
+.barLabel{
+  font-size: 12px;
+  font-weight: 800;
+  color: #6a6a6a;
+}
+
+.chartFooterSpace{ height: 6px; }
+
+/* Activity */
+.activityCard{
+  background: white;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+  padding: 10px 12px;
+}
+
+.activityHeader{
+  font-weight: 900;
+  text-align: center;
+  margin: 4px 0 10px;
+}
+
+.activityList{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.activityRow{
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.activityIconWrap{
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.activityIconWrap.orange{ background: #f2a23a; }
+.activityIconWrap.blue{ background: #2e5bff; }
+.activityIconWrap.green{ background: #19e34f; }
+
+.activityTitle{
+  font-weight: 900;
+  color: #333;
+  font-size: 14px;
+}
+
+.activityTime{
+  font-size: 11px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.activityFooter{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.activityLink{
+  color: #1f57ff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.actIcon{
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: white;
+}
+
+.actIcon.ok{ background: #19e34f; }
+.actIcon.basket{ background: #f0a23a; }
+.actIcon.tool{ background: #5c76ff; }
+
+.activityFooter{
+  margin-top: 10px;
+  text-align: center;
+}
+
+.activityLink{
+  color: #1f57ff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+
+/* Users */
+.userWrap{
+  height: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.userCard{
+  flex: 1;                 /* isi penuh sisa layar */
+  min-height: 0;           /* IMPORTANT */
+  display: flex;
+  flex-direction: column;
+}
+
+.userCardTop{
+  flex: 0 0 auto;          /* header card tetap */
+}
+
+.userTitle{
+  text-align: center;
+  font-weight: 900;
+  font-size: 34px;
+  margin: 0;
+}
+
+.btnAdd{
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 44px;
+  height: 32px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  background: #22d645;
+  color: white;
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 28px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+.tableWrap{
+  flex: 1;                 /* area isi fleksibel */
+  min-height: 0;           /* IMPORTANT */
+  display: flex;
+  flex-direction: column;
+}
+
+.userTable{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.userTable thead th{
+  background: #f0f0f0;
+  font-weight: 900;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.userTable tbody td{
+  padding: 10px 10px;
+  text-align: center;
+  border-top: 1px solid #eee;
+  font-weight: 700;
+  color: #444;
+}
+
+.userTable tbody tr:nth-child(even){
+  background: #fafafa;
+}
+
+.userTableScroll{
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;        /* SCROLL DI SINI */
+}
+
+.badge{
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-weight: 900;
+  color: white;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+.badge.ok{ background: #19e34f; }
+.badge.no{ background: #d71919; }
+
+.btnView{
+  border: 1px solid #bdbdbd;
+  background: #dcdcdc;
+  color: #1a66ff;
+  font-weight: 900;
+  padding: 4px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.aksi{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.iconBtn{
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 2px;
+}
+
+/* ===== History (samakan seperti gambar) ===== */
+.historyWrap{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+}
+
+.historyCard{
+  flex: 1;
+  width: 920px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.historyHeader{
+  flex: 0 0 auto;
+}
+
+.historyHeaderTitle{
+  text-align: center;
+  font-weight: 900;
+  font-size: 34px;
+  margin: 0;
+}
+
+.historyBody{
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.historyTableScroll{
+  /* flex: 1; */
+  min-height: 0;
+  overflow-y: auto; /* SCROLL DI SINI */
+}
+
+.historyTable{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.historyTable thead th{
+  background: #f0f0f0;
+  font-weight: 900;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 14px; /* paksa supaya tidak gede */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.historyTable tbody td{
+  padding: 12px 10px;
+  text-align: center;
+  font-weight: 700;
+  color: #444;
+  border-top: 1px solid #eee;
+}
+
+.historyTable tbody tr:nth-child(even){
+  background: #f7f7f7;
+}
+
+.historyStatus{
+  font-weight: 900;
+}
+
+.historyEmpty{
+  padding: 18px 10px;
+  text-align: center;
+  font-weight: 800;
+  color: #666;
+}
+
+.historyFooter{
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* ===== Monitoring ===== */
+.monitoringWrap{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+}
+
+.monitoringCard{
+  flex: 1;
+  width: 920px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.monitoringHeader{
+  flex: 0 0 auto;
+}
+
+.monitoringHeaderTitle{
+  text-align: center;
+  font-weight: 900;
+  font-size: 34px;
+  margin: 0;
+}
+
+.monitoringBody{
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* INI yang bikin tabel doang scroll */
+.monitoringTableScroll{
+  /* flex: 1; */
+  min-height: 0;
+  overflow-y: auto; /* SCROLL DI SINI */
+}
+
+.monitoringTable{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+/* sticky header biar judul kolom tetap terlihat saat scroll */
+.monitoringTable thead th{
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #f0f0f0;
+}
+
+/* tombol tetap di bawah, tidak ikut scroll */
+.monitoringFooter{
+  margin-top: 12px;
+  text-align: center;
+}
+
+.monitoringTable tbody tr:nth-child(even){
+  background: #f7f7f7;
+}
+
+.monitoringEmpty{
+  padding: 18px 10px;
+  text-align: center;
+  font-weight: 800;
+  color: #666;
+}
+
+.pill{
+  display: inline-block;
+  min-width: 54px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+.pill.ok{ background: #19e34f; }
+.pill.no{ background: #d71919; }
+
+.monitoringFooter{
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* =========================
+   USER LAYOUT (FIX KACAU)
+   ========================= */
+
+.uShell{
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: white;
+}
+
+.uMain{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar user */
+.uSidebar{
+  width: 250px;
+  background: #506a88;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.uSidebarBrand{
+  padding: 28px 18px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: .2px;
+}
+
+.uBrandLine{
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.uSidebarDivider{
+  width: 100%;
+  border-top: 2px solid rgba(255,255,255,0.25);
+  margin: 10px 0 16px;
+}
+
+.uBrandText{
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.2;
+  font-size: 18px;
+}
+
+.uSidebarNav{
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.uNavItem{
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: white;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.uNavItem:hover{ background: rgba(0,0,0,.12); }
+.uNavItem.active{ background: #0f2b60; }
+
+.uNavIcon{
+  width: 30px;
+  display: grid;
+  place-items: center;
+  opacity: .95;
+}
+
+/* Topbar user */
+.uTopbar{
+  height: 64px;
+  background: #dcdcdc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  flex: 0 0 64px;
+}
+
+.uTopbarLeft{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.uTopbarTitle{
+  margin: 0;
+  font-size: 34px;
+  color: #15306f;
+  font-weight: 900;
+}
+
+.uTopbarDivider{
+  width: 2px;
+  height: 32px;
+  background: #7a7a7a;
+  opacity: 0.6;
+}
+
+.uTopbarRole{
+  font-weight: 800;
+  color: #0f2b60;
+}
+
+.uTopbarRight{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.uProfileBtn{
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.uProfileBtn:hover{ background: rgba(0,0,0,.06); }
+
+.uProfileMenu{
+  position: absolute;
+  right: 0;
+  top: 52px;
+  width: 210px;
+  background: #fff;
+  border: 1px solid #d6d6d6;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  overflow: hidden;
+  z-index: 50;
+}
+
+.uProfileName{
+  padding: 12px 14px;
+  font-weight: 900;
+  color: #15306f;
+  border-bottom: 1px solid #eee;
+}
+
+.uLogoutBtn{
+  width: 100%;
+  border: 0;
+  background: transparent;
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 900;
+  color: #d71919;
+  cursor: pointer;
+}
+
+.uLogoutBtn:hover{ background: #f6f6f6; }
+
+/* Content user */
+.uContent{
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: #f3f3f3;
+  padding: 20px;
+}
+
+/* =========================
+   USER DASHBOARD
+   ========================= */
+.uDashWrap{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.uDashGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.uDashBottom{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+/* chart card user */
+.uChartCard{
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  padding: 10px 12px 12px;
+}
+
+.uChartTitle{
+  font-weight: 900;
+  text-align: center;
+  margin: 4px 0 10px;
+}
+
+.uChartSvgWrap{
+  width: 100%;
+  height: 180px;
+}
+
+/* rule */
+.uRuleLines{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 2px 2px;
+}
+.uRuleLine{
+  font-weight: 800;
+  color: #333;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+/* fuzzy result */
+.uFuzzyResultCard{
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.12);
+  padding: 12px 14px;
+}
+
+.uFuzzyTitle{
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.uFuzzyRow{
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-weight: 800;
+  color: #333;
+}
+
+.uFuzzyLabel{ color: #555; }
+.uFuzzyValue{ color: #111; }
+
+.uFuzzyActions{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.uFuzzyAction{
+  flex: 1;
+  background: #f6f6f6;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  padding: 8px 8px;
+  text-align: center;
+}
+
+.uFuzzyActionLabel{
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.uPill{
+  display: inline-block;
+  min-width: 54px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 900;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,.18);
+}
+
+.uPill.on{ background: #19e34f; }
+.uPill.off{ background: #d71919; }
+
+@media (max-width: 980px){
+  .uDashGrid{ grid-template-columns: 1fr; }
+  .uDashBottom{ grid-template-columns: 1fr; }
+  .uChartSvgWrap{ height: 160px; }
+}
+
+/* =========================================
+   HAMBURGER MENU & RESPONSIVE (MOBILE)
+   ========================================= */
+
+/* Tombol Hamburger di Topbar (Sembunyi di PC) */
+.hamburgerBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #15306f;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 14px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  color: white;
+}
+
+/* Tablet ke bawah */
+@media (max-width: 1024px) {
+  .historyCard, .monitoringCard { width: 100%; }
+}
+
+/* Layar HP */
+@media (max-width: 768px) {
+  .hamburgerBtn {
+    display: flex;
+    align-items: center;
+  }
+
+  /* 1. Sidebar Melayang dan Sembunyi di Kiri (-300px) */
+  .sidebar, .uSidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; 
+    width: 250px;
+    height: 100vh;
+    z-index: 999;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.3);
+  }
+
+  /* Muncul saat ada class 'open' */
+  .sidebar.open, .uSidebar.open { left: 0; }
+
+  /* 2. Layar Gelap (Backdrop) saat Menu Terbuka */
+  .sidebarBackdrop {
+    position: fixed;
+    inset: 0; 
+    background: rgba(0,0,0,0.6);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .sidebarBackdrop.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* 3. Rapikan Topbar (Admin & User) */
+  .topbarTitle, .uTopbarTitle { font-size: 20px; }
+  .topbarRole, .uTopbarRole { display: none; }
+  .topbarDivider, .uTopbarDivider { display: none; }
+  
+  /* 4. Tumpuk Kartu Dasbor ke Bawah */
+  .statRow { flex-direction: column; gap: 12px; }
+  .statCard { width: 100%; }
+  .dashGrid, .uDashGrid, .uDashBottom { grid-template-columns: 1fr; }
+  
+  /* 5. Amankan Tabel agar bisa di-scroll */
+  .userTableScroll, .historyTableScroll, .monitoringTableScroll {
+    overflow-x: auto;
+    max-width: 100vw;
+  }
+
+  /* Chart Fuzzy Tinggi disesuaikan */
+  .uChartSvgWrap { height: 160px; }
+}
+
+
+

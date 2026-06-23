@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #f5f6fa;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+
+.app {
+  display: flex;
+  height: 100%;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #3c5874;
+  color: white;
+  height: 100vh;
+  padding: 25px 15px;
+}
+
+/* JUDUL */
+.sidebar h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* GARIS BAWAH JUDUL */
+.sidebar .divider {
+  width: 100%;
+  height: 2px;
+  background: white;
+  opacity: 0.6;
+  margin-bottom: 20px;
+}
+
+/* MENU */
+.menu a {
+  text-decoration: none;
+}
+
+.menu-item {
+  color: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px; /* jarak icon dan teks */
+  font-size: 16px;
+}
+
+/* ukuran icon konsisten */
+.menu-icon {
+  font-size: 20px;
+  min-width: 22px; /* bikin teks tidak nempel */
+}
+
+
+/* MENU AKTIF */
+.menu-item.active {
+  background: #1e3a5f;
+}
+
+/* HILANGKAN WARNA UNGU LINK */
+.menu a:visited,
+.menu a:link,
+.menu a:hover {
+  color: white;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  padding: 20px 30px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.topbar {
+  background: #e9ecef;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+/* kiri: Dashboard | Admin */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.topbar-divider {
+  font-size: 24px;
+  color: #6b7280;
+}
+
+.topbar-role {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* kanan: icon */
+.topbar-profile {
+  font-size: 32px;
+}
+
+
+icon profile kanan
+.profile-icon {
+  font-size: 34px;
+  color: #475569;
+  cursor: pointer;
+}
+
+
+.cards {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.green {
+  background: #27e56c;
+}
+
+.blue {
+  background: #1e6bff;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+.chart-card,
+.activity {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tabs button {
+  padding: 8px 15px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+}
+
+.tabs .active {
+  background: white;
+  border: 1px solid #ddd;
+}
+
+/* daftar pengguna */
+.user-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.add-btn {
+  background: #18d84f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+thead {
+  background: #f3f3f3;
+}
+
+tbody tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.status {
+  padding: 6px 15px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.aktif {
+  background: #1be65d;
+}
+
+.nonaktif {
+  background: #d12b2b;
+}
+
+.lihat {
+  background: #ddd;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 6px;
+}
+
+.aksi span {
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
