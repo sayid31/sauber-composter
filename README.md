@@ -3,6 +3,7 @@
 ![Hardware](https://img.shields.io/badge/Hardware-Arduino_Uno-00979D?style=for-the-badge&logo=arduino&logoColor=white)
 ![Frontend](https://img.shields.io/badge/Frontend-React.js-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Backend](https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Fuzzy Logic](https://img.shields.io/badge/Fuzzy_Logic-4B0082?style=for-the-badge&logo=logic&logoColor=white)
 
 Sauber Composter adalah sistem pengolahan sampah organik otomatis berbasis Internet of Things (IoT). Proyek ini menggabungkan integrasi perangkat keras presisi untuk otomatisasi lingkungan komposter dengan *web dashboard* yang dirancang khusus untuk efisiensi pemantauan administratif internal.
 
